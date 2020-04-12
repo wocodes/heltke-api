@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 class QuestionController extends Controller
 {
     public function store(Request $request) {
-        dd(1);
-        return response()->json(['stat' => 'Done'], 200);
 
         $request->validate([
             'question' => 'required|string',
@@ -20,5 +18,7 @@ class QuestionController extends Controller
             'question' => $request->question,
             'user_id' => $this->user_id,
         ]);
+
+        return response()->json($saved_question, 201);
     }
 }

@@ -11,11 +11,7 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
-
-
+require_once "auth.php";
 require_once "tips.php";
 require_once "questions.php";
 require_once "users.php";
