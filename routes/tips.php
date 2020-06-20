@@ -1,6 +1,6 @@
 <?php
 
-$router->group(["prefix" => "api"], function() use ($router) {
+$router->group(["prefix" => "api"], function($router) {
     $router->get('/daily-tips', 'TipController@index');
 
     $router->get('/daily-tips/today', 'TipController@show');

@@ -21,7 +21,7 @@ class UserController extends Controller
     }
 
     public function register(Request $request) {
-        $saved_user = User::create(['uuid', $request->uuid]);
+        $saved_user = User::create(['uuid' => $request->uuid, 'email' => $request->uuid.'@'.'heltke.com']);
 
         return response()->json($saved_user);
     }
